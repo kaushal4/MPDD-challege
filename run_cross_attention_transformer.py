@@ -390,7 +390,7 @@ if __name__ == '__main__':
     print("--- Defining Experiment Parameters (Cross-Modal Transformer) ---")
 
     # --- Paths ---
-    DATA_ROOT_PATH = "/Users/kaushaldamania/deepl/MPDD-Elderly"
+    DATA_ROOT_PATH = "./data"
     MODEL_SAVE_PATH = './best_cross_modal_transformer_v1.pth' # New name
 
     # --- Data & Feature Settings ---

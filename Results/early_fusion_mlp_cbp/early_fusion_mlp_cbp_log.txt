@@ -1,0 +1,846 @@
+Model will be saved to: ./best_early_fusion_cbp.pth
+
+Validating paths...
+  Checking DEV_JSON: ../MPDD-2025/MPDD-Elderly/Training/labels/Training_Validation_files.json ... Found
+  Checking PERS_FEAT: ../MPDD-2025/MPDD-Elderly/Training/individualEmbedding/descriptions_embeddings_with_ids.npy ... Found
+  Checking AUDIO_DIR: ../MPDD-2025/MPDD-Elderly/Training/1s/Audio/wav2vec ... Found
+  Checking VIDEO_DIR: ../MPDD-2025/MPDD-Elderly/Training/1s/Visual/openface ... Found
+Using CPU.
+Splitting data...
+Data split: Train=293, Val=44
+Determining feature dimensions & checking config...
+Config Dims: A=512, V=709, P=1024, Cls=2, MaxLen=26
+Creating Datasets...
+
+--- Starting Hyperparameter Tuning (50 trials, Optimizing Weighted F1) ---
+Calculating dynamic weights for Optuna objective...
+  Class counts for weight calculation: {np.int64(1): 70, np.int64(0): 223}
+  Calculated dynamic class weights: ['0.6570', '2.0929']
+
+Trial 0: cbp_out=1024, hidden=128, dr=0.60, lr=0.000079, wd=0.000517
+  Fold 1/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 1024
+  - Total Fused Dim (Input to MLP): 3072
+  - MLP Hidden Dim: 128
+  - Output Classes: 2
+  - Dropout Rate: 0.6
+  Fold 1 Best Val F1w: 0.0910
+  Fold 2/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 1024
+  - Total Fused Dim (Input to MLP): 3072
+  - MLP Hidden Dim: 128
+  - Output Classes: 2
+  - Dropout Rate: 0.6
+  Fold 2 Best Val F1w: 0.0910
+  Fold 3/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 1024
+  - Total Fused Dim (Input to MLP): 3072
+  - MLP Hidden Dim: 128
+  - Output Classes: 2
+  - Dropout Rate: 0.6
+  Fold 3 Best Val F1w: 0.0910
+  Fold 4/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 1024
+  - Total Fused Dim (Input to MLP): 3072
+  - MLP Hidden Dim: 128
+  - Output Classes: 2
+  - Dropout Rate: 0.6
+  Fold 4 Best Val F1w: 0.0939
+  Fold 5/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 1024
+  - Total Fused Dim (Input to MLP): 3072
+  - MLP Hidden Dim: 128
+  - Output Classes: 2
+  - Dropout Rate: 0.6
+  Fold 5 Best Val F1w: 0.0939
+Trial 0 completed 5/5 folds. Avg CV F1-score: 0.0922
+Calculating dynamic weights for Optuna objective...
+  Class counts for weight calculation: {np.int64(1): 70, np.int64(0): 223}
+  Calculated dynamic class weights: ['0.6570', '2.0929']
+
+Trial 1: cbp_out=4096, hidden=128, dr=0.30, lr=0.001587, wd=0.000545
+  Fold 1/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 4096
+  - Total Fused Dim (Input to MLP): 12288
+  - MLP Hidden Dim: 128
+  - Output Classes: 2
+  - Dropout Rate: 0.30000000000000004
+  Fold 1 Best Val F1w: 0.0910
+  Fold 2/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 4096
+  - Total Fused Dim (Input to MLP): 12288
+  - MLP Hidden Dim: 128
+  - Output Classes: 2
+  - Dropout Rate: 0.30000000000000004
+  Fold 2 Best Val F1w: 0.6131
+  Fold 3/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 4096
+  - Total Fused Dim (Input to MLP): 12288
+  - MLP Hidden Dim: 128
+  - Output Classes: 2
+  - Dropout Rate: 0.30000000000000004
+  Fold 3 Best Val F1w: 0.0910
+  Fold 4/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 4096
+  - Total Fused Dim (Input to MLP): 12288
+  - MLP Hidden Dim: 128
+  - Output Classes: 2
+  - Dropout Rate: 0.30000000000000004
+  Fold 4 Best Val F1w: 0.0828
+  Fold 5/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 4096
+  - Total Fused Dim (Input to MLP): 12288
+  - MLP Hidden Dim: 128
+  - Output Classes: 2
+  - Dropout Rate: 0.30000000000000004
+  Fold 5 Best Val F1w: 0.1625
+Trial 1 completed 5/5 folds. Avg CV F1-score: 0.2081
+Calculating dynamic weights for Optuna objective...
+  Class counts for weight calculation: {np.int64(1): 70, np.int64(0): 223}
+  Calculated dynamic class weights: ['0.6570', '2.0929']
+
+Trial 2: cbp_out=4096, hidden=128, dr=0.60, lr=0.000038, wd=0.000128
+  Fold 1/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 4096
+  - Total Fused Dim (Input to MLP): 12288
+  - MLP Hidden Dim: 128
+  - Output Classes: 2
+  - Dropout Rate: 0.6
+  Fold 1 Best Val F1w: 0.0910
+  Fold 2/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 4096
+  - Total Fused Dim (Input to MLP): 12288
+  - MLP Hidden Dim: 128
+  - Output Classes: 2
+  - Dropout Rate: 0.6
+  Fold 2 Best Val F1w: 0.0910
+  Fold 3/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 4096
+  - Total Fused Dim (Input to MLP): 12288
+  - MLP Hidden Dim: 128
+  - Output Classes: 2
+  - Dropout Rate: 0.6
+  Fold 3 Best Val F1w: 0.1194
+  Fold 4/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 4096
+  - Total Fused Dim (Input to MLP): 12288
+  - MLP Hidden Dim: 128
+  - Output Classes: 2
+  - Dropout Rate: 0.6
+  Fold 4 Best Val F1w: 0.0939
+  Fold 5/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 4096
+  - Total Fused Dim (Input to MLP): 12288
+  - MLP Hidden Dim: 128
+  - Output Classes: 2
+  - Dropout Rate: 0.6
+  Fold 5 Best Val F1w: 0.0939
+Trial 2 completed 5/5 folds. Avg CV F1-score: 0.0978
+Calculating dynamic weights for Optuna objective...
+  Class counts for weight calculation: {np.int64(1): 70, np.int64(0): 223}
+  Calculated dynamic class weights: ['0.6570', '2.0929']
+
+Trial 3: cbp_out=2048, hidden=512, dr=0.20, lr=0.000256, wd=0.000033
+  Fold 1/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.2
+  Fold 1 Best Val F1w: 0.0910
+  Fold 2/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.2
+  Fold 2 Best Val F1w: 0.7910
+  Fold 3/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.2
+  Fold 3 Best Val F1w: 0.5991
+  Fold 4/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.2
+  Fold 4 Best Val F1w: 0.7057
+  Fold 5/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.2
+  Fold 5 Best Val F1w: 0.5571
+Trial 3 completed 5/5 folds. Avg CV F1-score: 0.5488
+Calculating dynamic weights for Optuna objective...
+  Class counts for weight calculation: {np.int64(1): 70, np.int64(0): 223}
+  Calculated dynamic class weights: ['0.6570', '2.0929']
+
+Trial 4: cbp_out=1024, hidden=256, dr=0.60, lr=0.000033, wd=0.000147
+  Fold 1/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 1024
+  - Total Fused Dim (Input to MLP): 3072
+  - MLP Hidden Dim: 256
+  - Output Classes: 2
+  - Dropout Rate: 0.6
+  Fold 1 Best Val F1w: 0.0910
+  Fold 2/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 1024
+  - Total Fused Dim (Input to MLP): 3072
+  - MLP Hidden Dim: 256
+  - Output Classes: 2
+  - Dropout Rate: 0.6
+  Fold 2 Best Val F1w: 0.0910
+  Fold 3/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 1024
+  - Total Fused Dim (Input to MLP): 3072
+  - MLP Hidden Dim: 256
+  - Output Classes: 2
+  - Dropout Rate: 0.6
+  Fold 3 Best Val F1w: 0.0910
+  Fold 4/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 1024
+  - Total Fused Dim (Input to MLP): 3072
+  - MLP Hidden Dim: 256
+  - Output Classes: 2
+  - Dropout Rate: 0.6
+  Fold 4 Best Val F1w: 0.0939
+  Fold 5/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 1024
+  - Total Fused Dim (Input to MLP): 3072
+  - MLP Hidden Dim: 256
+  - Output Classes: 2
+  - Dropout Rate: 0.6
+  Fold 5 Best Val F1w: 0.0939
+Trial 4 completed 5/5 folds. Avg CV F1-score: 0.0922
+Calculating dynamic weights for Optuna objective...
+  Class counts for weight calculation: {np.int64(1): 70, np.int64(0): 223}
+  Calculated dynamic class weights: ['0.6570', '2.0929']
+
+Trial 5: cbp_out=8192, hidden=512, dr=0.50, lr=0.000106, wd=0.000006
+  Fold 1/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.5
+  Fold 1 Best Val F1w: 0.0910
+  Fold 2/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.5
+  Fold 2 Best Val F1w: 0.1254
+  Fold 3/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.5
+  Fold 3 Best Val F1w: 0.0910
+  Fold 4/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.5
+  Fold 4 Best Val F1w: 0.0939
+  Fold 5/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.5
+  Fold 5 Best Val F1w: 0.0939
+Trial 5 completed 5/5 folds. Avg CV F1-score: 0.0990
+Calculating dynamic weights for Optuna objective...
+  Class counts for weight calculation: {np.int64(1): 70, np.int64(0): 223}
+  Calculated dynamic class weights: ['0.6570', '2.0929']
+
+Trial 6: cbp_out=1024, hidden=256, dr=0.20, lr=0.000094, wd=0.000689
+  Fold 1/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 1024
+  - Total Fused Dim (Input to MLP): 3072
+  - MLP Hidden Dim: 256
+  - Output Classes: 2
+  - Dropout Rate: 0.2
+  Fold 1 Best Val F1w: 0.0910
+  Fold 2/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 1024
+  - Total Fused Dim (Input to MLP): 3072
+  - MLP Hidden Dim: 256
+  - Output Classes: 2
+  - Dropout Rate: 0.2
+  Trial pruned during fold 2.
+Calculating dynamic weights for Optuna objective...
+  Class counts for weight calculation: {np.int64(1): 70, np.int64(0): 223}
+  Calculated dynamic class weights: ['0.6570', '2.0929']
+
+Trial 7: cbp_out=8192, hidden=512, dr=0.60, lr=0.001096, wd=0.000004
+  Fold 1/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.6
+  Fold 1 Best Val F1w: 0.2502
+  Fold 2/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.6
+  Fold 2 Best Val F1w: 0.1903
+  Fold 3/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.6
+  Fold 3 Best Val F1w: 0.0910
+  Fold 4/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.6
+  Fold 4 Best Val F1w: 0.0939
+  Fold 5/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.6
+  Fold 5 Best Val F1w: 0.6545
+Trial 7 completed 5/5 folds. Avg CV F1-score: 0.2560
+Calculating dynamic weights for Optuna objective...
+  Class counts for weight calculation: {np.int64(1): 70, np.int64(0): 223}
+  Calculated dynamic class weights: ['0.6570', '2.0929']
+
+Trial 8: cbp_out=2048, hidden=256, dr=0.40, lr=0.000036, wd=0.000264
+  Fold 1/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 256
+  - Output Classes: 2
+  - Dropout Rate: 0.4
+  Fold 1 Best Val F1w: 0.0910
+  Fold 2/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 256
+  - Output Classes: 2
+  - Dropout Rate: 0.4
+  Trial pruned during fold 2.
+Calculating dynamic weights for Optuna objective...
+  Class counts for weight calculation: {np.int64(1): 70, np.int64(0): 223}
+  Calculated dynamic class weights: ['0.6570', '2.0929']
+
+Trial 9: cbp_out=1024, hidden=512, dr=0.50, lr=0.000164, wd=0.000001
+  Fold 1/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 1024
+  - Total Fused Dim (Input to MLP): 3072
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.5
+  Fold 1 Best Val F1w: 0.0910
+  Fold 2/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 1024
+  - Total Fused Dim (Input to MLP): 3072
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.5
+  Trial pruned during fold 2.
+Calculating dynamic weights for Optuna objective...
+  Class counts for weight calculation: {np.int64(1): 70, np.int64(0): 223}
+  Calculated dynamic class weights: ['0.6570', '2.0929']
+
+Trial 10: cbp_out=2048, hidden=64, dr=0.10, lr=0.009072, wd=0.000034
+  Fold 1/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 64
+  - Output Classes: 2
+  - Dropout Rate: 0.1
+  Fold 1 Best Val F1w: 0.1254
+  Fold 2/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 64
+  - Output Classes: 2
+  - Dropout Rate: 0.1
+  Fold 2 Best Val F1w: 0.0910
+  Fold 3/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 64
+  - Output Classes: 2
+  - Dropout Rate: 0.1
+  Fold 3 Best Val F1w: 0.1254
+  Fold 4/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 64
+  - Output Classes: 2
+  - Dropout Rate: 0.1
+  Fold 4 Best Val F1w: 0.0939
+  Fold 5/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 64
+  - Output Classes: 2
+  - Dropout Rate: 0.1
+  Fold 5 Best Val F1w: 0.1289
+Trial 10 completed 5/5 folds. Avg CV F1-score: 0.1129
+Calculating dynamic weights for Optuna objective...
+  Class counts for weight calculation: {np.int64(1): 70, np.int64(0): 223}
+  Calculated dynamic class weights: ['0.6570', '2.0929']
+
+Trial 11: cbp_out=8192, hidden=512, dr=0.70, lr=0.000797, wd=0.000012
+  Fold 1/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.7
+  Fold 1 Best Val F1w: 0.0910
+  Fold 2/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.7
+  Trial pruned during fold 2.
+Calculating dynamic weights for Optuna objective...
+  Class counts for weight calculation: {np.int64(1): 70, np.int64(0): 223}
+  Calculated dynamic class weights: ['0.6570', '2.0929']
+
+Trial 12: cbp_out=8192, hidden=512, dr=0.10, lr=0.000767, wd=0.000002
+  Fold 1/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.1
+  Fold 1 Best Val F1w: 0.7791
+  Fold 2/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.1
+  Fold 2 Best Val F1w: 0.4301
+  Fold 3/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.1
+  Fold 3 Best Val F1w: 0.7475
+  Fold 4/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.1
+  Fold 4 Best Val F1w: 0.7948
+  Fold 5/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.1
+  Fold 5 Best Val F1w: 0.7428
+Trial 12 completed 5/5 folds. Avg CV F1-score: 0.6989
+Calculating dynamic weights for Optuna objective...
+  Class counts for weight calculation: {np.int64(1): 70, np.int64(0): 223}
+  Calculated dynamic class weights: ['0.6570', '2.0929']
+
+Trial 13: cbp_out=2048, hidden=512, dr=0.10, lr=0.000469, wd=0.000034
+  Fold 1/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.1
+  Fold 1 Best Val F1w: 0.6026
+  Fold 2/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.1
+  Fold 2 Best Val F1w: 0.7013
+  Fold 3/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.1
+  Fold 3 Best Val F1w: 0.7605
+  Fold 4/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.1
+  Fold 4 Best Val F1w: 0.3910
+  Fold 5/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.1
+  Fold 5 Best Val F1w: 0.2557
+Trial 13 completed 5/5 folds. Avg CV F1-score: 0.5422
+Calculating dynamic weights for Optuna objective...
+  Class counts for weight calculation: {np.int64(1): 70, np.int64(0): 223}
+  Calculated dynamic class weights: ['0.6570', '2.0929']
+
+Trial 14: cbp_out=2048, hidden=64, dr=0.20, lr=0.000013, wd=0.000001
+  Fold 1/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 64
+  - Output Classes: 2
+  - Dropout Rate: 0.2
+  Fold 1 Best Val F1w: 0.1254
+  Fold 2/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 64
+  - Output Classes: 2
+  - Dropout Rate: 0.2
+  Fold 2 Best Val F1w: 0.0910
+  Fold 3/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 64
+  - Output Classes: 2
+  - Dropout Rate: 0.2
+  Fold 3 Best Val F1w: 0.1254
+  Fold 4/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 64
+  - Output Classes: 2
+  - Dropout Rate: 0.2
+  Fold 4 Best Val F1w: 0.0939
+  Fold 5/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 2048
+  - Total Fused Dim (Input to MLP): 6144
+  - MLP Hidden Dim: 64
+  - Output Classes: 2
+  - Dropout Rate: 0.2
+  Fold 5 Best Val F1w: 0.6545
+Trial 14 completed 5/5 folds. Avg CV F1-score: 0.2181
+Calculating dynamic weights for Optuna objective...
+  Class counts for weight calculation: {np.int64(1): 70, np.int64(0): 223}
+  Calculated dynamic class weights: ['0.6570', '2.0929']
+
+Trial 15: cbp_out=8192, hidden=512, dr=0.20, lr=0.003668, wd=0.000014
+  Fold 1/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.2
+  Fold 1 Best Val F1w: 0.3060
+  Fold 2/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.2
+  Fold 2 Best Val F1w: 0.1585
+  Fold 3/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.2
+  Fold 3 Best Val F1w: 0.7375
+  Fold 4/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.2
+  Fold 4 Best Val F1w: 0.0939
+  Fold 5/5...
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.2
+  Fold 5 Best Val F1w: 0.0939
+Trial 15 completed 5/5 folds. Avg CV F1-score: 0.2779
+
+--- Optuna Study Complete ---
+Best trial #12: Weighted F1=0.6989
+  cbp_output_dim: 8192
+  hidden_dim: 512
+  dropout_rate: 0.100000
+  lr: 0.000767
+  weight_decay: 0.000002
+
+--- Training Final CBP MLP Model ---
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.1
+Final model on device: cpu
+
+--- Final Model Architecture & Parameters ---
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.1
+Calculating dynamic weights for final training...
+  Class counts for weight calculation: {np.int64(1): 70, np.int64(0): 223}
+  Calculated dynamic class weights: ['0.6570', '2.0929']
+Final criterion using gamma=2, weights=YES
+Ensuring final model is on device cpu...
+
+--- Starting Final Training Loop (Saving based on Validation Weighted F1) ---
+Epoch 1/50: Train Loss=0.2420, Acc=0.3174 | Val Loss=0.2055, Acc=0.2045, F1w=0.0695
+Created save dir: .
+  -> Saved best model (Epoch 1, Val F1w: 0.0695) to ./best_early_fusion_cbp.pth
+Epoch 2/50: Train Loss=0.2013, Acc=0.2389 | Val Loss=0.1940, Acc=0.2045, F1w=0.0695
+Epoch 3/50: Train Loss=0.2000, Acc=0.2389 | Val Loss=0.1965, Acc=0.2045, F1w=0.0695
+Epoch 4/50: Train Loss=0.1942, Acc=0.2389 | Val Loss=0.2002, Acc=0.2045, F1w=0.0695
+Epoch 5/50: Train Loss=0.1966, Acc=0.2423 | Val Loss=0.2145, Acc=0.2500, F1w=0.1582
+Created save dir: .
+  -> Saved best model (Epoch 5, Val F1w: 0.1582) to ./best_early_fusion_cbp.pth
+Epoch 6/50: Train Loss=0.1859, Acc=0.2423 | Val Loss=0.2086, Acc=0.2045, F1w=0.0695
+Epoch 7/50: Train Loss=0.1766, Acc=0.2867 | Val Loss=0.2292, Acc=0.2045, F1w=0.0695
+Epoch 8/50: Train Loss=0.1621, Acc=0.3993 | Val Loss=0.2416, Acc=0.2045, F1w=0.0695
+Epoch 9/50: Train Loss=0.1609, Acc=0.4573 | Val Loss=0.2602, Acc=0.2045, F1w=0.0695
+Epoch 10/50: Train Loss=0.1529, Acc=0.4096 | Val Loss=0.2585, Acc=0.2955, F1w=0.3207
+Created save dir: .
+  -> Saved best model (Epoch 10, Val F1w: 0.3207) to ./best_early_fusion_cbp.pth
+Epoch 11/50: Train Loss=0.1499, Acc=0.4573 | Val Loss=0.2595, Acc=0.2727, F1w=0.2516
+Epoch 12/50: Train Loss=0.1434, Acc=0.5085 | Val Loss=0.2681, Acc=0.2727, F1w=0.2516
+Epoch 13/50: Train Loss=0.1407, Acc=0.5085 | Val Loss=0.2848, Acc=0.4318, F1w=0.4835
+Created save dir: .
+  -> Saved best model (Epoch 13, Val F1w: 0.4835) to ./best_early_fusion_cbp.pth
+Epoch 14/50: Train Loss=0.1341, Acc=0.5666 | Val Loss=0.2876, Acc=0.2727, F1w=0.2516
+Epoch 15/50: Train Loss=0.1228, Acc=0.6041 | Val Loss=0.3245, Acc=0.4318, F1w=0.4862
+Created save dir: .
+  -> Saved best model (Epoch 15, Val F1w: 0.4862) to ./best_early_fusion_cbp.pth
+Epoch 16/50: Train Loss=0.1193, Acc=0.6177 | Val Loss=0.3133, Acc=0.2500, F1w=0.2395
+Epoch 17/50: Train Loss=0.1148, Acc=0.6587 | Val Loss=0.3189, Acc=0.2045, F1w=0.2148
+Epoch 18/50: Train Loss=0.1148, Acc=0.6451 | Val Loss=0.3195, Acc=0.2500, F1w=0.2395
+Epoch 19/50: Train Loss=0.1005, Acc=0.6928 | Val Loss=0.3226, Acc=0.2955, F1w=0.3342
+Epoch 20/50: Train Loss=0.1064, Acc=0.6792 | Val Loss=0.3540, Acc=0.5227, F1w=0.5562
+Created save dir: .
+  -> Saved best model (Epoch 20, Val F1w: 0.5562) to ./best_early_fusion_cbp.pth
+Epoch 21/50: Train Loss=0.1017, Acc=0.6758 | Val Loss=0.3438, Acc=0.2727, F1w=0.3061
+Epoch 22/50: Train Loss=0.0949, Acc=0.7304 | Val Loss=0.3640, Acc=0.2045, F1w=0.2148
+Epoch 23/50: Train Loss=0.0927, Acc=0.7474 | Val Loss=0.4086, Acc=0.6364, F1w=0.6187
+Created save dir: .
+  -> Saved best model (Epoch 23, Val F1w: 0.6187) to ./best_early_fusion_cbp.pth
+Epoch 24/50: Train Loss=0.0851, Acc=0.7782 | Val Loss=0.3368, Acc=0.3409, F1w=0.3874
+Epoch 25/50: Train Loss=0.0776, Acc=0.7850 | Val Loss=0.3430, Acc=0.5000, F1w=0.5483
+Epoch 26/50: Train Loss=0.0740, Acc=0.8157 | Val Loss=0.3918, Acc=0.5000, F1w=0.5447
+Epoch 27/50: Train Loss=0.0738, Acc=0.7782 | Val Loss=0.3948, Acc=0.4773, F1w=0.5214
+Epoch 28/50: Train Loss=0.0820, Acc=0.8191 | Val Loss=0.4090, Acc=0.5000, F1w=0.5391
+Epoch 29/50: Train Loss=0.0870, Acc=0.7713 | Val Loss=0.3722, Acc=0.6136, F1w=0.6210
+Created save dir: .
+  -> Saved best model (Epoch 29, Val F1w: 0.6210) to ./best_early_fusion_cbp.pth
+Epoch 30/50: Train Loss=0.0582, Acc=0.8396 | Val Loss=0.3906, Acc=0.4773, F1w=0.5273
+Epoch 31/50: Train Loss=0.0539, Acc=0.8703 | Val Loss=0.4142, Acc=0.5000, F1w=0.5447
+Epoch 32/50: Train Loss=0.0573, Acc=0.8362 | Val Loss=0.4670, Acc=0.6364, F1w=0.6364
+Created save dir: .
+  -> Saved best model (Epoch 32, Val F1w: 0.6364) to ./best_early_fusion_cbp.pth
+Epoch 33/50: Train Loss=0.0550, Acc=0.8669 | Val Loss=0.4300, Acc=0.3636, F1w=0.4126
+Epoch 34/50: Train Loss=0.0430, Acc=0.8737 | Val Loss=0.4375, Acc=0.6136, F1w=0.6326
+Epoch 35/50: Train Loss=0.0486, Acc=0.8737 | Val Loss=0.4233, Acc=0.5000, F1w=0.5483
+Epoch 36/50: Train Loss=0.0432, Acc=0.9113 | Val Loss=0.3739, Acc=0.5000, F1w=0.5483
+Epoch 37/50: Train Loss=0.0428, Acc=0.8874 | Val Loss=0.4850, Acc=0.4773, F1w=0.5277
+Epoch 38/50: Train Loss=0.0357, Acc=0.9215 | Val Loss=0.5232, Acc=0.6136, F1w=0.6210
+Epoch 39/50: Train Loss=0.0477, Acc=0.8908 | Val Loss=0.4826, Acc=0.4091, F1w=0.4606
+Epoch 40/50: Train Loss=0.0302, Acc=0.9386 | Val Loss=0.4131, Acc=0.3864, F1w=0.4370
+Epoch 41/50: Train Loss=0.0364, Acc=0.9215 | Val Loss=0.5652, Acc=0.5909, F1w=0.6053
+Epoch 42/50: Train Loss=0.0235, Acc=0.9522 | Val Loss=0.4948, Acc=0.4091, F1w=0.4606
+Early stopping epoch 42.
+
+--- Final Training Complete ---
+Best validation F1-score (0.6364) at epoch 32
+
+--- Evaluating Best Saved Model (Based on Validation F1w) ---
+Initialized EarlyFusionMLPWithCBP:
+  - Input Dims: Audio=512, Video=709, Pers=1024
+  - CBP Output Dim (per pair): 8192
+  - Total Fused Dim (Input to MLP): 24576
+  - MLP Hidden Dim: 512
+  - Output Classes: 2
+  - Dropout Rate: 0.1
+Final Best Model Validation Accuracy: 0.6364
+Final Best Model Validation Weighted F1-Score: 0.6364
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.77      0.77      0.77        35
+           1       0.11      0.11      0.11         9
+
+    accuracy                           0.64        44
+   macro avg       0.44      0.44      0.44        44
+weighted avg       0.64      0.64      0.64        44
+
+
+Final Best Model Confusion Matrix:
+[[27  8]
+ [ 8  1]]
+
+CM plot saved as confusion_matrix_early_fusion_cbp.png
+
+--- Script Finished ---

@@ -4,6 +4,8 @@ import torch.fft
 import math
 import torch.nn.functional as F
 
+
+
 class CompactBilinearPooling(nn.Module):
     """
     Compact Bilinear Pooling layer using Count Sketch approximation via scatter_add_.

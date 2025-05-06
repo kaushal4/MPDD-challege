@@ -1,12 +1,60 @@
 # How to run it
-## Files with everything in a everythin in a script (no imports)
-- run_transformer_inter_fusion (For inter fusion transformer with Regularization)
-```
-python run_transformer_inter_fusion.py
-```
-- 
 
-# Config explanation (not necesarry to understand)
+## Getting a python venv
+make sure you have Python version `3.13.2` available on path as python3 and execute the following commands in folder
+
+```
+python3 -m venv .venv
+```
+
+This will create a virtual environment in a folder .venv in the current directory.
+
+Now source the python version (The commands may differ if you are on windows)
+```
+source .venv/bin/activate
+```
+
+Now install the requirements
+
+```
+pip install -r requirements.txt
+```
+
+## Running the model
+
+At this point you should be able to run any model in the base folder
+
+For example:
+```
+python run_cross_attention_transformer.py
+```
+
+You should be able to run all models direcrtly now
+
+## Note
+If you are on MAC (M chips) you don't have to worry about device (mps selected by default).
+Otherwise, you may have to change the device in config and some scripts require you to manually set this as a global variable.
+Since we used MACOS to run the models we can't test on other devices
+
+# Project Structures
+Representation of folders:
+- DataLoader: This folder contains standard data loader function to run training/eval on
+- Datasets: This folder has code to generate a dataset for our data
+- Dataclasses: Standard data holders to ease
+- Results: Compilation of our results and scripts to generate some figures
+- Utils: common utilities
+- run_*.py: script to run the respective model
+
+# Contributions
+- MLP and baseline models : Aryamaan Saha
+- LSTM and basic transformers: Niranjan
+- Transformers and regularization: Kaushal
+
+# Note
+Since the data provided here is fake, you won't get good results.
+To get the original data, please contact the MPDD challenge team
+
+## Config explanation (not necesarry to understand)
 
 -  data_root_path: path to your data directory (Elderly or Young)
 -  window_split_time: 1 

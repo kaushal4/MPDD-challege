@@ -356,11 +356,11 @@ if __name__ == '__main__':
     print("--- Defining Experiment Parameters (MoE Adapter Fusion Model) ---")
 
     # --- Paths ---
-    DATA_ROOT_PATH = "/Users/kaushaldamania/deepl/MPDD-Elderly" # **REQUIRED: Set this path**
+    DATA_ROOT_PATH = "./data" # **REQUIRED: Set this path**
     MODEL_SAVE_PATH = './best_moe_adapter_fusion_model_v1.pth' # Model save path (Updated name)
 
     # --- Data & Feature Settings ---
-    WINDOW_SPLIT_TIME = 5
+    WINDOW_SPLIT_TIME = 1
     AUDIO_FEATURE_METHOD = "wav2vec" # Subdirectory name for audio features
     VIDEO_FEATURE_METHOD = "openface" # Subdirectory name for video features
     FEATURE_MAX_LEN = 26 # Max seq len (used by dataset for padding/truncation)
